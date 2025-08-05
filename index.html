@@ -1,40 +1,14 @@
 
 <!DOCTYPE html>
 
-
-
 <html lang="zh">
-
-
-
 <head>
-
-
-
-<meta charset="UTF-8">
-
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>希腊艺术与建筑之旅 - 雅典、圣托里尼和罗德岛</title>
-
-
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
-
-
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-
-
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 <style>
 
 
@@ -1001,1085 +975,293 @@ display: none;
 
 
 </style>
-
-
-
 </head>
-
-
-
 <body>
-
-
-
 <!-- Navigation -->
-
-
-
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
-
-
-
 <div class="container">
-
-
-
 <a class="navbar-brand" href="#">希腊艺术之旅</a>
-
-
-
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-
-
-
+<button class="navbar-toggler" data-bs-target="#navbarNav" data-bs-toggle="collapse" type="button">
 <span class="navbar-toggler-icon"></span>
-
-
-
 </button>
-
-
-
 <div class="collapse navbar-collapse" id="navbarNav">
-
-
-
 <ul class="navbar-nav ms-auto">
-
-
-
 <li class="nav-item">
-
-
-
 <a class="nav-link" href="#itinerary">行程安排</a>
-
-
-
 </li>
-
-
-
 <li class="nav-item">
-
-
-
 <a class="nav-link" href="#map">地图</a>
-
-
-
 </li>
-
-
-
 <li class="nav-item">
-
-
-
 <a class="nav-link" href="#highlights">亮点介绍</a>
-
-
-
 </li>
-
-
-
 </ul>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 </nav>
-
-
-
-
-
-
-
 <!-- Hero Section -->
-
-
-
 <section class="hero-section">
-
-
-
-
-
-
-
 <div class="container">
-
-
-
 <h1 class="display-1 mb-4">希腊艺术与建筑之旅</h1>
-
-
-
 <p class="lead mb-4">探索古希腊文明与现代美景</p>
-
-
-
 <p class="h5">雅典 • 圣托里尼 • 罗德岛</p>
-
-
-
 </div>
-
-
-
 </section>
-
-
-
-
-
-
-
 <!-- Itinerary Section -->
-
-
-
-<section id="itinerary" class="py-5">
-
-
-
+<section class="py-5" id="itinerary">
 <div class="container">
-
-
-
 <h2 class="section-title text-center">行程安排</h2>
-
-
-
-
-
-
-
 <!-- Athens -->
-
-
-
 <div class="location-card">
-
-
-
-
-
-
-
 <div class="row">
-
-
-
 <div class="col-md-6">
-
-
-
-<img src="images/athens.jpg" class="location-image" alt="雅典卫城">
-
-
-
+<img alt="雅典卫城" class="location-image" src="images/athens.jpg"/>
 </div>
-
-
-
 <div class="col-md-6 p-4">
-
-
-
 <h3>第1-2天：雅典</h3>
-
-
-
 <ul class="list-unstyled">
-
-
-
 <li class="mb-3">
-
-
-
 <strong>雅典卫城与帕特农神庙</strong>
-
-
-
 <p class="mb-2">古希腊最重要的建筑群，包含多座具有重大建筑和历史意义的古代建筑遗迹。</p>
-
-
-
 <button class="map-button" onclick="showLocationMap('雅典卫城', 37.97173525691482, 23.725792111737427)">
-
-
-
 <i class="fas fa-map-marker-alt"></i> 在地图上查看
 
 
 
 </button>
-
-
-
 </li>
-
-
-
 <li class="mb-3">
-
-
-
 <strong>奥林匹克运动场 </strong>
-
-
-
 <p class="mb-2">收藏雅典卫城文物的现代化博物馆，展示古希腊艺术珍品。</p>
-
-
-
 <button class="map-button" onclick="showLocationMap('奥林匹克运动场', 37.98315, 23.72796)">
-
-
-
 <i class="fas fa-map-marker-alt"></i> 在地图上查看
 
 
 
 </button>
-
-
-
 </li>
-
-
-
 <li class="mb-3">
-
-
-
 <strong>国家考古博物馆</strong>
-
-
-
 <p class="mb-2">古代雅典的政治、商业、行政和社会活动中心。</p>
-
-
-
 <button class="map-button" onclick="showLocationMap('国家考古博物馆', 37.98924271989635, 23.732813540574806)">
-
-
-
 <i class="fas fa-map-marker-alt"></i> 在地图上查看
 
 
 
 </button>
-
-
-
 </li>
-
-
-
 </ul>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
-
-
-
-
 <!-- Santorini -->
-
-
-
 <div class="location-card">
-
-
-
-
-
-
-
 <div class="row">
-
-
-
 <div class="col-md-6">
-
-
-
-<img src="images/santorini.jpg" class="location-image" alt="圣托里尼">
-
-
-
+<img alt="圣托里尼" class="location-image" src="images/santorini.jpg"/>
 </div>
-
-
-
 <div class="col-md-6 p-4">
-
-
-
-<h3>第3-4天：圣托里尼</h3>
-
-
-
+<h3>第3-5天：圣托里尼</h3>
 <ul class="list-unstyled">
-
-
-
 <li class="mb-3">
-
-
-
 <strong>伊亚小镇</strong>
-
-
-
 <p class="mb-2">以白色房屋、蓝色圆顶教堂和壮丽日落而闻名。</p>
-
-
-
 <button class="map-button" onclick="showLocationMap('伊亚小镇', 36.46022036567669, 25.372863594468726)">
-
-
-
 <i class="fas fa-map-marker-alt"></i> 在地图上查看
 
 
 
 </button>
-
-
-
 </li>
-
-
-
 <li class="mb-3">
-
-
-
 <strong>火山口温泉 </strong>
-
-
-
 <p class="mb-2">被火山灰保存的米诺斯青铜时代定居点。</p>
-
-
-
 <button class="map-button" onclick="showLocationMap('火山口温泉', 36.397348335065196, 25.459139847588762)">
-
-
-
 <i class="fas fa-map-marker-alt"></i> 在地图上查看
 
 
 
 </button>
-
-
-
 </li>
-
-
-
 <li class="mb-3">
-
-
-
 <strong>黑沙滩 </strong>
-
-
-
 <p class="mb-2">独特的红色火山沙和悬崖景观。</p>
-
-
-
 <button class="map-button" onclick="showLocationMap('黑沙滩', 36.354728493233345, 25.37797311203136)">
-
-
-
 <i class="fas fa-map-marker-alt"></i> 在地图上查看
 
 
 
 </button>
-
-
-
 </li>
-
-
-
 </ul>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
-
-
-
-
 <!-- Rhodes -->
-
-
-
 <div class="location-card">
-
-
-
-
-
-
-
 <div class="row">
-
-
-
 <div class="col-md-6">
-
-
-
-<img src="images/rhodes.jpg" class="location-image" alt="罗德岛">
-
-
-
+<img alt="罗德岛" class="location-image" src="images/rhodes.jpg"/>
 </div>
-
-
-
 <div class="col-md-6 p-4">
-
-
-
-<h3>第5-7天：罗德岛</h3>
-
-
-
+<h3>第6-7天：罗德岛</h3>
 <ul class="list-unstyled">
-
-
-
 <li class="mb-3">
-
-
-
 <strong>中世纪古城</strong>
-
-
-
 <p class="mb-2">联合国教科文组织世界遗产，保存完好的中世纪建筑和防御工事。</p>
-
-
-
 <button class="map-button" onclick="showLocationMap('罗德岛古城', 36.4467, 28.2278)">
-
-
-
 <i class="fas fa-map-marker-alt"></i> 在地图上查看
 
 
 
 </button>
-
-
-
 </li>
-
-
-
 <li class="mb-3">
-
-
-
 <strong>骑士团宫殿</strong>
-
-
-
 <p class="mb-2">14世纪宫殿，展示中世纪建筑风格和博物馆。</p>
-
-
-
 <button class="map-button" onclick="showLocationMap('骑士团宫殿', 36.44609976433013, 28.224127838650652)">
-
-
-
 <i class="fas fa-map-marker-alt"></i> 在地图上查看
 
 
 
 </button>
-
-
-
 </li>
-
-
-
 <li class="mb-3">
-
-
-
 <strong>林多斯卫城</strong>
-
-
-
 <p class="mb-2">古代卫城遗址，包含神庙废墟和壮丽景色。</p>
-
-
-
 <button class="map-button" onclick="showLocationMap('林多斯卫城', 36.0917, 28.0878)">
-
-
-
 <i class="fas fa-map-marker-alt"></i> 在地图上查看
 
 
 
 </button>
-
-
-
 </li>
-
-
-
 </ul>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 </section>
-
-
-
-
-
-
-
 <!-- Map Section -->
-
-
-
-<section id="map" class="py-5 bg-light">
-
-
-
+<section class="py-5 bg-light" id="map">
 <div class="container">
-
-
-
 <h2 class="section-title text-center">行程地图</h2>
-
-
-
 <div class="map-container" id="map"></div>
-
-
-
 </div>
-
-
-
 </section>
-
-
-
-
-
-
-
 <!-- Highlights Section -->
-
-
-
-<section id="highlights" class="py-5">
-
-
-
+<section class="py-5" id="highlights">
 <div class="container">
-
-
-
 <h2 class="section-title text-center">艺术与建筑亮点</h2>
-
-
-
 <div class="row">
-
-
-
 <div class="col-md-6">
-
-
-
 <div class="highlight-box">
-
-
-
 <h4>历史建筑风格</h4>
-
-
-
 <p><strong>雅典：</strong>卫城中的帕特农神庙是古典希腊建筑的巅峰之作，以比例和秩序著称。</p>
 <p><strong>圣托里尼：</strong>传统洞穴屋与白墙蓝顶教堂顺应地形建造，体现爱琴海地区独特风貌。</p>
 <p><strong>罗德岛：</strong>中世纪骑士城由哥特式与拜占庭风格交融，展现骑士团统治下的建筑智慧。</p>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 <div class="col-md-6">
-
-
-
 <div class="highlight-box">
-
-
-
 <h4>城市与景观融合</h4>
-
-
-
 <p><strong>雅典：</strong>古希腊建筑多用浮雕与柱式装饰，强调结构与美学的统一。</p>
 <p><strong>圣托里尼：</strong>强烈的白蓝对比构成清爽纯净的视觉印象，是典型的爱琴海色彩语言。</p>
 <p><strong>罗德岛：</strong>骑士城堡装饰低调厚重，以石材质感与徽章雕刻展现中世纪权威美学。</p>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 <div class="col-md-6">
-
-
-
 <div class="highlight-box">
-
-
-
 <h4>装饰与色彩语言</h4>
-
-
-
 <p><strong>雅典：</strong>古希腊建筑多用浮雕与柱式装饰，强调结构与美学的统一。</p>
 <p><strong>圣托里尼：</strong>强烈的白蓝对比构成清爽纯净的视觉印象，是典型的爱琴海色彩语言。</p>
 <p><strong>罗德岛：</strong>骑士城堡装饰低调厚重，以石材质感与徽章雕刻展现中世纪权威美学。</p>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 <div class="col-md-6">
-
-
-
 <div class="highlight-box">
-
-
-
 <h4>艺术精神与文化象征</h4>
-
-
-
 <p><strong>雅典：</strong>体现理性、和谐与人文主义，是西方文明美学的起源地。</p>
 <p><strong>圣托里尼：</strong>建筑表达出对自然的敬畏与顺应，是人与自然共生的诗意象征。</p>
 <p><strong>罗德岛：</strong>融合欧洲与东方的文化痕迹，建筑本身即是信仰与力量的象征。</p>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 </section>
-
-
-
-
-
-
-
 <!-- Location Map Modal -->
-
-
-
 <div class="modal fade" id="locationMapModal" tabindex="-1">
-
-
-
 <div class="modal-dialog modal-lg">
-
-
-
 <div class="modal-content">
-
-
-
 <div class="modal-header">
-
-
-
 <h5 class="modal-title">位置地图</h5>
-
-
-
-<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-
-
-
+<button class="btn-close" data-bs-dismiss="modal" type="button"></button>
 </div>
-
-
-
 <div class="modal-body">
-
-
-
 <div id="locationMap"></div>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
-
-
-
-
 <!-- 编辑内容模态框 -->
-
-
-
 <div class="modal fade edit-modal" id="editModal" tabindex="-1">
-
-
-
 <div class="modal-dialog">
-
-
-
 <div class="modal-content">
-
-
-
 <div class="modal-header">
-
-
-
 <h5 class="modal-title">编辑内容</h5>
-
-
-
-<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-
-
-
+<button class="btn-close" data-bs-dismiss="modal" type="button"></button>
 </div>
-
-
-
 <div class="modal-body">
-
-
-
 <div class="mb-3">
-
-
-
 <label class="form-label">标题</label>
-
-
-
-<input type="text" class="form-control" id="editTitle">
-
-
-
+<input class="form-control" id="editTitle" type="text"/>
 </div>
-
-
-
 <div class="mb-3">
-
-
-
 <label class="form-label">内容</label>
-
-
-
 <textarea class="form-control" id="editContent" rows="5"></textarea>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 <div class="modal-footer">
-
-
-
-<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-
-
-
-<button type="button" class="btn btn-primary" onclick="saveEdit()">保存</button>
-
-
-
+<button class="btn btn-secondary" data-bs-dismiss="modal" type="button">取消</button>
+<button class="btn btn-primary" onclick="saveEdit()" type="button">保存</button>
 </div>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
-
-
-
-
 <!-- 上传图片模态框 -->
-
-
-
 <div class="modal fade edit-modal" id="uploadModal" tabindex="-1">
-
-
-
 <div class="modal-dialog">
-
-
-
 <div class="modal-content">
-
-
-
 <div class="modal-header">
-
-
-
 <h5 class="modal-title">上传图片</h5>
-
-
-
-<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-
-
-
+<button class="btn-close" data-bs-dismiss="modal" type="button"></button>
 </div>
-
-
-
 <div class="modal-body">
-
-
-
 <div class="mb-3">
-
-
-
 <label class="form-label">选择图片</label>
-
-
-
-<input type="file" class="form-control" id="imageUpload" accept="image/*" onchange="previewImage(this)">
-
-
-
+<input accept="image/*" class="form-control" id="imageUpload" onchange="previewImage(this)" type="file"/>
 </div>
-
-
-
 <div class="mb-3">
-
-
-
 <label class="form-label">上传位置</label>
-
-
-
 <select class="form-select" id="imageLocation">
-
-
-
 <option value="athens">雅典</option>
-
-
-
 <option value="santorini">圣托里尼</option>
-
-
-
 <option value="rhodes">罗德岛</option>
-
-
-
 </select>
-
-
-
 </div>
-
-
-
 <div class="mb-3">
-
-
-
-<img id="imagePreview" class="img-fluid" style="display: none; max-height: 200px;">
-
-
-
+<img class="img-fluid" id="imagePreview" style="display: none; max-height: 200px;"/>
 </div>
-
-
-
 </div>
-
-
-
 <div class="modal-footer">
-
-
-
-<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
-
-
-
-<button type="button" class="btn btn-primary" onclick="saveImage()">上传</button>
-
-
-
+<button class="btn btn-secondary" data-bs-dismiss="modal" type="button">取消</button>
+<button class="btn btn-primary" onclick="saveImage()" type="button">上传</button>
 </div>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
 </div>
-
-
-
-
-
-
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-
-
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
-
-
-
 <script>
 
 
@@ -2099,6 +1281,8 @@ attribution: '© OpenStreetMap contributors'
 // Add markers for each destination
 
 const destinations = [
+{ name: '马耳他', coords: [35.8997, 14.5146] },
+
 
 { name: '雅典港口', coords: [37.9838, 23.7275] },
 
@@ -2144,30 +1328,19 @@ L.marker(dest.coords)
 
 
 
+
 // Add route line
-
 const routeCoords = [
-
-destinations[0].coords,
-
-destinations[1].coords,
-
-destinations[2].coords
-
+  destinations[0].coords, // 马耳他
+  destinations[1].coords, // 雅典
+  destinations[2].coords, // 圣托里尼
+  destinations[3].coords  // 罗德岛
 ];
 
-
-
 const route = L.polyline(routeCoords, {
-
-color: '#1a5f7a',
-
-weight: 3
-
+  color: '#1a5f7a',
+  weight: 3
 }).addTo(map);
-
-
-
 // 创建样式
 
 const transportStyle = document.createElement('style');
@@ -2290,33 +1463,57 @@ zIndexOffset: 1000
 
 // 路线段定义
 
+
 this.segments = [
-
-{
-
-start: destinations[0].coords, // 雅典
-
-end: destinations[1].coords, // 圣托里尼
-
-vehicle: this.ship,
-
-speed: 0.0015 // 船的速度减慢50%（从0.003减为0.0015）
-
-},
-
-{
-
-start: destinations[1].coords, // 圣托里尼
-
-end: destinations[2].coords, // 罗德岛
-
-vehicle: this.plane,
-
-speed: 0.006 // 飞机速度保持不变
-
-}
-
+  {
+    start: destinations[0].coords, // 马耳他
+    end: destinations[1].coords,   // 雅典
+    vehicle: L.marker(destinations[0].coords, {
+      icon: planeIcon,
+      zIndexOffset: 1000
+    }),
+    speed: 0.006
+  },
+  {
+    start: destinations[1].coords, // 雅典
+    end: destinations[2].coords,   // 圣托里尼
+    vehicle: L.marker(destinations[1].coords, {
+      icon: shipIcon,
+      zIndexOffset: 1000
+    }),
+    speed: 0.0015
+  },
+  {
+    start: destinations[2].coords, // 圣托里尼
+    end: destinations[3].coords,   // 罗德岛
+    vehicle: L.marker(destinations[2].coords, {
+      icon: planeIcon,
+      zIndexOffset: 1000
+    }),
+    speed: 0.006
+  }
 ];
+// 預設每段交通工具的方向
+this.segments.forEach((segment, index) => {
+  const angle = this.calculateAngle(segment.start, segment.end);
+  let correctedAngle = angle;
+  if (index === 0) correctedAngle = angle - 15; // 只有馬耳他 → 雅典要偏轉
+
+  const icon = segment.vehicle.getElement();
+  if (icon && icon.querySelector('i')) {
+    icon.querySelector('i').style.transform = `rotate(${correctedAngle}deg)`;
+  } else {
+    // 若初次載入無法抓到 DOM，延遲處理
+    segment.vehicle.on('add', () => {
+      const icon2 = segment.vehicle.getElement();
+      if (icon2 && icon2.querySelector('i')) {
+        icon2.querySelector('i').style.transform = `rotate(${correctedAngle}deg)`;
+      }
+    });
+  }
+});
+
+
 
 
 
@@ -2362,100 +1559,50 @@ return angle;
 
 
 
+
 // 更新动画
-
 update() {
+  if (!this.animating) return;
 
-if (!this.animating) return;
+  const segment = this.segments[this.currentSegment];
 
+  // 更新进度
+  this.progress += segment.speed;
 
+  // 如果到达终点
+  if (this.progress >= 1) {
+    // 切换到下一段
+    this.currentSegment = (this.currentSegment + 1) % this.segments.length;
+    this.progress = 0;
 
-const segment = this.segments[this.currentSegment];
+    // 移除当前交通工具
+    this.map.removeLayer(segment.vehicle);
 
+    // 添加下一段的交通工具
+    const nextSegment = this.segments[this.currentSegment];
+    nextSegment.vehicle.setLatLng(nextSegment.start);
+    nextSegment.vehicle.addTo(this.map);
 
+    console.log("切换到:", this.currentSegment);
+  } else {
+    // 计算当前位置
+    const currentPos = this.interpolate(segment.start, segment.end, this.progress);
+    segment.vehicle.setLatLng(currentPos);
 
-// 更新进度
+    // 更新方向
+    const angle = this.calculateAngle(segment.start, segment.end);
+const correctedAngle = this.currentSegment === 0 ? angle - 15 : angle;
+    const icon = segment.vehicle.getElement();
+    if (icon && icon.querySelector('i')) {
+      let correctedAngle = angle;
+if (this.currentSegment === 0) correctedAngle = angle - 15;
+icon.querySelector('i').style.transform = `rotate(${correctedAngle}deg)`;
+    }
+  }
 
-this.progress += segment.speed;
-
-
-
-// 如果到达终点
-
-if (this.progress >= 1) {
-
-// 切换到下一段
-
-this.currentSegment = (this.currentSegment + 1) % this.segments.length;
-
-this.progress = 0;
-
-
-
-// 移除当前交通工具
-
-this.map.removeLayer(segment.vehicle);
-
-
-
-// 添加下一段的交通工具
-
-const nextSegment = this.segments[this.currentSegment];
-
-nextSegment.vehicle.setLatLng(nextSegment.start);
-
-nextSegment.vehicle.addTo(this.map);
-
-
-
-console.log("切换到:", this.currentSegment === 0 ? "船" : "飞机");
-
-} else {
-
-// 计算当前位置
-
-const currentPos = this.interpolate(segment.start, segment.end, this.progress);
-
-
-
-// 更新位置
-
-segment.vehicle.setLatLng(currentPos);
-
-
-
-// 更新方向
-
-const angle = this.calculateAngle(segment.start, segment.end);
-
-const icon = segment.vehicle.getElement();
-
-if (icon && icon.querySelector('i')) {
-
-if (this.currentSegment === 1) { // 飞机
-
-icon.querySelector('i').style.transform = `rotate(${angle}deg)`;
-
-} else { // 船
-
-icon.querySelector('i').style.transform = `rotate(${angle}deg)`;
-
+  // 继续动画
+  requestAnimationFrame(() => this.update());
 }
-
-}
-
-}
-
-
-
-// 继续动画
-
-requestAnimationFrame(() => this.update());
-
-}
-
-
-
 // 开始动画
 
 start() {
@@ -2996,14 +2143,23 @@ break;
 
 }
 
+
+
+
+// 新增：马耳他出发点
+destinations.unshift({ name: '马耳他', coords: [35.8997, 14.5146] }); // 例如瓦莱塔机场坐标
+routeCoords.unshift(destinations[0].coords);
+
+// 插入新的路线段（马耳他 -> 雅典）到最前面
+transport.segments.unshift({
+  start: destinations[0].coords, // 马耳他
+  end: destinations[1].coords, // 雅典
+  vehicle: L.marker(destinations[0].coords, { icon: planeIcon, zIndexOffset: 1000 }),
+  speed: 0.006
+});
+
+// 在地图上添加飞机图标（初始为马耳他出发）
+transport.segments[0].vehicle.addTo(map);
 </script>
-
-
-
 </body>
-
-
-
 </html>
-
-
