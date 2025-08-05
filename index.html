@@ -1,0 +1,3009 @@
+
+<!DOCTYPE html>
+
+
+
+<html lang="zh">
+
+
+
+<head>
+
+
+
+<meta charset="UTF-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<title>希腊艺术与建筑之旅 - 雅典、圣托里尼和罗德岛</title>
+
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+
+
+<style>
+
+
+
+:root {
+
+
+
+--primary-color: #00a8ff;
+
+
+
+--secondary-color: #0097e6;
+
+
+
+--dark-bg: #1e272e;
+
+
+
+--darker-bg: #2f3640;
+
+
+
+--text-light: #f5f6fa;
+
+
+
+--text-gray: #dcdde1;
+
+
+
+}
+
+
+
+
+
+
+
+body {
+
+
+
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+
+
+color: var(--text-light);
+
+
+
+background-color: var(--dark-bg);
+
+
+
+}
+
+
+
+
+
+
+
+.navbar {
+
+
+
+background-color: rgba(30, 39, 46, 0.95) !important;
+
+
+
+backdrop-filter: blur(10px);
+
+
+
+}
+
+
+
+
+
+
+
+.navbar-brand, .nav-link {
+
+
+
+color: var(--text-light) !important;
+
+
+
+}
+
+
+
+
+
+
+
+.nav-link:hover {
+
+
+
+color: var(--primary-color) !important;
+
+
+
+}
+
+
+
+
+
+
+
+.hero-section {
+
+
+
+height: 100vh;
+
+
+
+background: linear-gradient(rgba(30, 39, 46, 0.7), rgba(30, 39, 46, 0.7)),
+
+
+
+url('images/athens.jpg') center/cover;
+
+
+
+display: flex;
+
+
+
+align-items: center;
+
+
+
+justify-content: center;
+
+
+
+color: var(--text-light);
+
+
+
+text-align: center;
+
+
+
+position: relative;
+
+
+
+overflow: hidden;
+
+
+
+}
+
+
+
+
+
+
+
+.hero-section::before {
+
+
+
+content: '';
+
+
+
+position: absolute;
+
+
+
+top: 0;
+
+
+
+left: 0;
+
+
+
+right: 0;
+
+
+
+bottom: 0;
+
+
+
+background: linear-gradient(45deg, rgba(0, 168, 255, 0.1), rgba(0, 151, 230, 0.1));
+
+
+
+z-index: 1;
+
+
+
+}
+
+
+
+
+
+
+
+.section-title {
+
+
+
+color: var(--primary-color);
+
+
+
+margin-bottom: 2rem;
+
+
+
+position: relative;
+
+
+
+padding-bottom: 1rem;
+
+
+
+}
+
+
+
+
+
+
+
+.section-title::after {
+  transform: translateX(-50%);
+
+
+
+content: '';
+
+
+
+position: absolute;
+
+
+
+bottom: 0;
+
+
+
+left: 50%;
+
+
+
+
+
+
+
+width: 100%;
+
+
+
+height: 3px;
+
+
+
+background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+
+
+
+}
+
+
+
+
+
+
+
+.itinerary-card, .location-card {
+
+
+
+background-color: var(--darker-bg);
+
+
+
+border: none;
+
+
+
+border-radius: 15px;
+
+
+
+overflow: hidden;
+
+
+
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+
+
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+
+
+margin-bottom: 2rem;
+
+
+
+}
+
+
+
+
+
+
+
+.itinerary-card:hover, .location-card:hover {
+
+
+
+transform: translateY(-5px);
+
+
+
+box-shadow: 0 8px 25px rgba(0, 168, 255, 0.2);
+
+
+
+}
+
+
+
+
+
+
+
+.location-image {
+
+
+
+height: 300px;
+
+
+
+object-fit: cover;
+
+
+
+width: 100%;
+
+
+
+}
+
+
+
+
+
+
+
+.map-button {
+
+
+
+background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+
+
+
+color: var(--text-light);
+
+
+
+border: none;
+
+
+
+padding: 0.5rem 1rem;
+
+
+
+border-radius: 25px;
+
+
+
+cursor: pointer;
+
+
+
+transition: all 0.3s ease;
+
+
+
+box-shadow: 0 2px 10px rgba(0, 168, 255, 0.3);
+
+
+
+}
+
+
+
+
+
+
+
+.map-button:hover {
+
+
+
+transform: translateY(-2px);
+
+
+
+box-shadow: 0 4px 15px rgba(0, 168, 255, 0.4);
+
+
+
+}
+
+
+
+
+
+
+
+.map-container {
+
+
+
+height: 500px;
+
+
+
+width: 100%;
+
+
+
+border-radius: 15px;
+
+
+
+overflow: hidden;
+
+
+
+margin-bottom: 2rem;
+
+
+
+}
+
+
+
+
+
+
+
+.modal {
+
+
+
+z-index: 1050;
+
+
+
+}
+
+
+
+.modal-backdrop {
+
+
+
+z-index: 1040;
+
+
+
+}
+
+
+
+.modal-dialog {
+
+
+
+z-index: 1055;
+
+
+
+}
+
+
+
+.modal-content {
+
+
+
+background-color: var(--darker-bg);
+
+
+
+color: var(--text-light);
+
+
+
+}
+
+
+
+.modal-header {
+
+
+
+border-bottom: 1px solid rgba(0, 168, 255, 0.1);
+
+
+
+}
+
+
+
+.btn-close {
+
+
+
+filter: invert(1) grayscale(100%) brightness(200%);
+
+
+
+}
+
+
+
+.edit-modal textarea {
+
+
+
+background: var(--dark-bg);
+
+
+
+color: var(--text-light);
+
+
+
+border: 1px solid var(--primary-color);
+
+
+
+}
+
+
+
+.edit-modal input {
+
+
+
+background: var(--dark-bg);
+
+
+
+color: var(--text-light);
+
+
+
+border: 1px solid var(--primary-color);
+
+
+
+}
+
+
+
+.image-preview {
+
+
+
+max-width: 200px;
+
+
+
+max-height: 200px;
+
+
+
+margin: 10px 0;
+
+
+
+}
+
+
+
+#locationMap {
+
+
+
+height: 500px;
+
+
+
+width: 100%;
+
+
+
+z-index: 1060;
+
+
+
+}
+
+
+
+
+
+
+
+.highlight-box {
+
+
+
+background-color: var(--darker-bg);
+
+
+
+padding: 2rem;
+
+
+
+border-radius: 15px;
+
+
+
+margin: 2rem 0;
+
+
+
+border: 1px solid rgba(0, 168, 255, 0.1);
+
+
+
+transition: all 0.3s ease;
+
+
+
+}
+
+
+
+
+
+
+
+.highlight-box:hover {
+
+
+
+border-color: var(--primary-color);
+
+
+
+box-shadow: 0 4px 15px rgba(0, 168, 255, 0.1);
+
+
+
+}
+
+
+
+
+
+
+
+.gallery-section {
+
+
+
+padding: 5rem 0;
+
+
+
+background-color: var(--darker-bg);
+
+
+
+}
+
+
+
+
+
+
+
+.gallery-item {
+
+
+
+margin-bottom: 2rem;
+
+
+
+border-radius: 15px;
+
+
+
+overflow: hidden;
+
+
+
+box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+
+
+
+transition: all 0.3s ease;
+
+
+
+}
+
+
+
+
+
+
+
+.gallery-item:hover {
+
+
+
+transform: translateY(-5px);
+
+
+
+box-shadow: 0 8px 25px rgba(0, 168, 255, 0.2);
+
+
+
+}
+
+
+
+
+
+
+
+.gallery-item img {
+
+
+
+width: 100%;
+
+
+
+height: 300px;
+
+
+
+object-fit: cover;
+
+
+
+transition: transform 0.3s ease;
+
+
+
+}
+
+
+
+
+
+
+
+.gallery-item:hover img {
+
+
+
+transform: scale(1.05);
+
+
+
+}
+
+
+
+
+
+
+
+#map {
+
+
+
+border-radius: 15px;
+
+
+
+overflow: hidden;
+
+
+
+}
+
+
+
+
+
+
+
+.leaflet-popup-content-wrapper {
+
+
+
+background-color: var(--darker-bg);
+
+
+
+color: var(--text-light);
+
+
+
+}
+
+
+
+
+
+
+
+.leaflet-popup-tip {
+
+
+
+background-color: var(--darker-bg);
+
+
+
+}
+
+
+
+
+
+
+
+/* 添加编辑按钮样式 */
+
+
+
+.edit-button {
+
+
+
+position: absolute;
+
+
+
+top: 10px;
+
+
+
+right: 10px;
+
+
+
+z-index: 100;
+
+
+
+background: rgba(0, 168, 255, 0.9);
+
+
+
+border: none;
+
+
+
+color: white;
+
+
+
+padding: 5px 10px;
+
+
+
+border-radius: 5px;
+
+
+
+cursor: pointer;
+
+
+
+transition: all 0.3s ease;
+
+
+
+}
+
+
+
+.edit-button:hover {
+
+
+
+background: rgba(0, 168, 255, 1);
+
+
+
+transform: scale(1.05);
+
+
+
+}
+
+
+
+.location-card {
+
+
+
+position: relative;
+
+
+
+}
+
+
+
+.hero-section {
+
+
+
+position: relative;
+
+
+
+}
+
+
+
+/* 移除管理面板样式 */
+
+
+
+.admin-panel {
+
+
+
+display: none;
+
+
+
+}
+
+
+
+</style>
+
+
+
+</head>
+
+
+
+<body>
+
+
+
+<!-- Navigation -->
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+
+
+
+<div class="container">
+
+
+
+<a class="navbar-brand" href="#">希腊艺术之旅</a>
+
+
+
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+
+
+
+<span class="navbar-toggler-icon"></span>
+
+
+
+</button>
+
+
+
+<div class="collapse navbar-collapse" id="navbarNav">
+
+
+
+<ul class="navbar-nav ms-auto">
+
+
+
+<li class="nav-item">
+
+
+
+<a class="nav-link" href="#itinerary">行程安排</a>
+
+
+
+</li>
+
+
+
+<li class="nav-item">
+
+
+
+<a class="nav-link" href="#map">地图</a>
+
+
+
+</li>
+
+
+
+<li class="nav-item">
+
+
+
+<a class="nav-link" href="#highlights">亮点介绍</a>
+
+
+
+</li>
+
+
+
+</ul>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</nav>
+
+
+
+
+
+
+
+<!-- Hero Section -->
+
+
+
+<section class="hero-section">
+
+
+
+
+
+
+
+<div class="container">
+
+
+
+<h1 class="display-1 mb-4">希腊艺术与建筑之旅</h1>
+
+
+
+<p class="lead mb-4">探索古希腊文明与现代美景</p>
+
+
+
+<p class="h5">雅典 • 圣托里尼 • 罗德岛</p>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Itinerary Section -->
+
+
+
+<section id="itinerary" class="py-5">
+
+
+
+<div class="container">
+
+
+
+<h2 class="section-title text-center">行程安排</h2>
+
+
+
+
+
+
+
+<!-- Athens -->
+
+
+
+<div class="location-card">
+
+
+
+
+
+
+
+<div class="row">
+
+
+
+<div class="col-md-6">
+
+
+
+<img src="images/athens.jpg" class="location-image" alt="雅典卫城">
+
+
+
+</div>
+
+
+
+<div class="col-md-6 p-4">
+
+
+
+<h3>第1-2天：雅典</h3>
+
+
+
+<ul class="list-unstyled">
+
+
+
+<li class="mb-3">
+
+
+
+<strong>雅典卫城与帕特农神庙</strong>
+
+
+
+<p class="mb-2">古希腊最重要的建筑群，包含多座具有重大建筑和历史意义的古代建筑遗迹。</p>
+
+
+
+<button class="map-button" onclick="showLocationMap('雅典卫城', 37.97173525691482, 23.725792111737427)">
+
+
+
+<i class="fas fa-map-marker-alt"></i> 在地图上查看
+
+
+
+</button>
+
+
+
+</li>
+
+
+
+<li class="mb-3">
+
+
+
+<strong>奥林匹克运动场 </strong>
+
+
+
+<p class="mb-2">收藏雅典卫城文物的现代化博物馆，展示古希腊艺术珍品。</p>
+
+
+
+<button class="map-button" onclick="showLocationMap('奥林匹克运动场', 37.98315, 23.72796)">
+
+
+
+<i class="fas fa-map-marker-alt"></i> 在地图上查看
+
+
+
+</button>
+
+
+
+</li>
+
+
+
+<li class="mb-3">
+
+
+
+<strong>国家考古博物馆</strong>
+
+
+
+<p class="mb-2">古代雅典的政治、商业、行政和社会活动中心。</p>
+
+
+
+<button class="map-button" onclick="showLocationMap('国家考古博物馆', 37.98924271989635, 23.732813540574806)">
+
+
+
+<i class="fas fa-map-marker-alt"></i> 在地图上查看
+
+
+
+</button>
+
+
+
+</li>
+
+
+
+</ul>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Santorini -->
+
+
+
+<div class="location-card">
+
+
+
+
+
+
+
+<div class="row">
+
+
+
+<div class="col-md-6">
+
+
+
+<img src="images/santorini.jpg" class="location-image" alt="圣托里尼">
+
+
+
+</div>
+
+
+
+<div class="col-md-6 p-4">
+
+
+
+<h3>第3-4天：圣托里尼</h3>
+
+
+
+<ul class="list-unstyled">
+
+
+
+<li class="mb-3">
+
+
+
+<strong>伊亚小镇</strong>
+
+
+
+<p class="mb-2">以白色房屋、蓝色圆顶教堂和壮丽日落而闻名。</p>
+
+
+
+<button class="map-button" onclick="showLocationMap('伊亚小镇', 36.46022036567669, 25.372863594468726)">
+
+
+
+<i class="fas fa-map-marker-alt"></i> 在地图上查看
+
+
+
+</button>
+
+
+
+</li>
+
+
+
+<li class="mb-3">
+
+
+
+<strong>火山口温泉 </strong>
+
+
+
+<p class="mb-2">被火山灰保存的米诺斯青铜时代定居点。</p>
+
+
+
+<button class="map-button" onclick="showLocationMap('火山口温泉', 36.397348335065196, 25.459139847588762)">
+
+
+
+<i class="fas fa-map-marker-alt"></i> 在地图上查看
+
+
+
+</button>
+
+
+
+</li>
+
+
+
+<li class="mb-3">
+
+
+
+<strong>黑沙滩 </strong>
+
+
+
+<p class="mb-2">独特的红色火山沙和悬崖景观。</p>
+
+
+
+<button class="map-button" onclick="showLocationMap('黑沙滩', 36.354728493233345, 25.37797311203136)">
+
+
+
+<i class="fas fa-map-marker-alt"></i> 在地图上查看
+
+
+
+</button>
+
+
+
+</li>
+
+
+
+</ul>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Rhodes -->
+
+
+
+<div class="location-card">
+
+
+
+
+
+
+
+<div class="row">
+
+
+
+<div class="col-md-6">
+
+
+
+<img src="images/rhodes.jpg" class="location-image" alt="罗德岛">
+
+
+
+</div>
+
+
+
+<div class="col-md-6 p-4">
+
+
+
+<h3>第5-7天：罗德岛</h3>
+
+
+
+<ul class="list-unstyled">
+
+
+
+<li class="mb-3">
+
+
+
+<strong>中世纪古城</strong>
+
+
+
+<p class="mb-2">联合国教科文组织世界遗产，保存完好的中世纪建筑和防御工事。</p>
+
+
+
+<button class="map-button" onclick="showLocationMap('罗德岛古城', 36.4467, 28.2278)">
+
+
+
+<i class="fas fa-map-marker-alt"></i> 在地图上查看
+
+
+
+</button>
+
+
+
+</li>
+
+
+
+<li class="mb-3">
+
+
+
+<strong>骑士团宫殿</strong>
+
+
+
+<p class="mb-2">14世纪宫殿，展示中世纪建筑风格和博物馆。</p>
+
+
+
+<button class="map-button" onclick="showLocationMap('骑士团宫殿', 36.44609976433013, 28.224127838650652)">
+
+
+
+<i class="fas fa-map-marker-alt"></i> 在地图上查看
+
+
+
+</button>
+
+
+
+</li>
+
+
+
+<li class="mb-3">
+
+
+
+<strong>林多斯卫城</strong>
+
+
+
+<p class="mb-2">古代卫城遗址，包含神庙废墟和壮丽景色。</p>
+
+
+
+<button class="map-button" onclick="showLocationMap('林多斯卫城', 36.0917, 28.0878)">
+
+
+
+<i class="fas fa-map-marker-alt"></i> 在地图上查看
+
+
+
+</button>
+
+
+
+</li>
+
+
+
+</ul>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Map Section -->
+
+
+
+<section id="map" class="py-5 bg-light">
+
+
+
+<div class="container">
+
+
+
+<h2 class="section-title text-center">行程地图</h2>
+
+
+
+<div class="map-container" id="map"></div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Highlights Section -->
+
+
+
+<section id="highlights" class="py-5">
+
+
+
+<div class="container">
+
+
+
+<h2 class="section-title text-center">艺术与建筑亮点</h2>
+
+
+
+<div class="row">
+
+
+
+<div class="col-md-6">
+
+
+
+<div class="highlight-box">
+
+
+
+<h4>历史建筑风格</h4>
+
+
+
+<p><strong>雅典：</strong>卫城中的帕特农神庙是古典希腊建筑的巅峰之作，以比例和秩序著称。</p>
+<p><strong>圣托里尼：</strong>传统洞穴屋与白墙蓝顶教堂顺应地形建造，体现爱琴海地区独特风貌。</p>
+<p><strong>罗德岛：</strong>中世纪骑士城由哥特式与拜占庭风格交融，展现骑士团统治下的建筑智慧。</p>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="col-md-6">
+
+
+
+<div class="highlight-box">
+
+
+
+<h4>城市与景观融合</h4>
+
+
+
+<p><strong>雅典：</strong>古希腊建筑多用浮雕与柱式装饰，强调结构与美学的统一。</p>
+<p><strong>圣托里尼：</strong>强烈的白蓝对比构成清爽纯净的视觉印象，是典型的爱琴海色彩语言。</p>
+<p><strong>罗德岛：</strong>骑士城堡装饰低调厚重，以石材质感与徽章雕刻展现中世纪权威美学。</p>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="col-md-6">
+
+
+
+<div class="highlight-box">
+
+
+
+<h4>装饰与色彩语言</h4>
+
+
+
+<p><strong>雅典：</strong>古希腊建筑多用浮雕与柱式装饰，强调结构与美学的统一。</p>
+<p><strong>圣托里尼：</strong>强烈的白蓝对比构成清爽纯净的视觉印象，是典型的爱琴海色彩语言。</p>
+<p><strong>罗德岛：</strong>骑士城堡装饰低调厚重，以石材质感与徽章雕刻展现中世纪权威美学。</p>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="col-md-6">
+
+
+
+<div class="highlight-box">
+
+
+
+<h4>艺术精神与文化象征</h4>
+
+
+
+<p><strong>雅典：</strong>体现理性、和谐与人文主义，是西方文明美学的起源地。</p>
+<p><strong>圣托里尼：</strong>建筑表达出对自然的敬畏与顺应，是人与自然共生的诗意象征。</p>
+<p><strong>罗德岛：</strong>融合欧洲与东方的文化痕迹，建筑本身即是信仰与力量的象征。</p>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- Location Map Modal -->
+
+
+
+<div class="modal fade" id="locationMapModal" tabindex="-1">
+
+
+
+<div class="modal-dialog modal-lg">
+
+
+
+<div class="modal-content">
+
+
+
+<div class="modal-header">
+
+
+
+<h5 class="modal-title">位置地图</h5>
+
+
+
+<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+
+
+</div>
+
+
+
+<div class="modal-body">
+
+
+
+<div id="locationMap"></div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- 编辑内容模态框 -->
+
+
+
+<div class="modal fade edit-modal" id="editModal" tabindex="-1">
+
+
+
+<div class="modal-dialog">
+
+
+
+<div class="modal-content">
+
+
+
+<div class="modal-header">
+
+
+
+<h5 class="modal-title">编辑内容</h5>
+
+
+
+<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+
+
+</div>
+
+
+
+<div class="modal-body">
+
+
+
+<div class="mb-3">
+
+
+
+<label class="form-label">标题</label>
+
+
+
+<input type="text" class="form-control" id="editTitle">
+
+
+
+</div>
+
+
+
+<div class="mb-3">
+
+
+
+<label class="form-label">内容</label>
+
+
+
+<textarea class="form-control" id="editContent" rows="5"></textarea>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="modal-footer">
+
+
+
+<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+
+
+
+<button type="button" class="btn btn-primary" onclick="saveEdit()">保存</button>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- 上传图片模态框 -->
+
+
+
+<div class="modal fade edit-modal" id="uploadModal" tabindex="-1">
+
+
+
+<div class="modal-dialog">
+
+
+
+<div class="modal-content">
+
+
+
+<div class="modal-header">
+
+
+
+<h5 class="modal-title">上传图片</h5>
+
+
+
+<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+
+
+
+</div>
+
+
+
+<div class="modal-body">
+
+
+
+<div class="mb-3">
+
+
+
+<label class="form-label">选择图片</label>
+
+
+
+<input type="file" class="form-control" id="imageUpload" accept="image/*" onchange="previewImage(this)">
+
+
+
+</div>
+
+
+
+<div class="mb-3">
+
+
+
+<label class="form-label">上传位置</label>
+
+
+
+<select class="form-select" id="imageLocation">
+
+
+
+<option value="athens">雅典</option>
+
+
+
+<option value="santorini">圣托里尼</option>
+
+
+
+<option value="rhodes">罗德岛</option>
+
+
+
+</select>
+
+
+
+</div>
+
+
+
+<div class="mb-3">
+
+
+
+<img id="imagePreview" class="img-fluid" style="display: none; max-height: 200px;">
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="modal-footer">
+
+
+
+<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">取消</button>
+
+
+
+<button type="button" class="btn btn-primary" onclick="saveImage()">上传</button>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+
+
+
+<script>
+
+
+
+// Initialize main map
+
+const map = L.map('map').setView([37.9838, 23.7275], 6);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+attribution: '© OpenStreetMap contributors'
+
+}).addTo(map);
+
+
+
+// Add markers for each destination
+
+const destinations = [
+
+{ name: '雅典港口', coords: [37.9838, 23.7275] },
+
+{ name: '圣托里尼机场', coords: [36.3932, 25.4615] },
+
+{ name: '罗德岛港口', coords: [36.4344, 28.2176] }
+
+];
+
+
+
+// 不再添加景点标记
+
+const attractions = [];
+
+
+
+// Add all markers to the map
+
+destinations.forEach(dest => {
+
+L.marker(dest.coords)
+
+.bindPopup(dest.name)
+
+.addTo(map);
+
+});
+
+
+
+// 不再添加景点标记
+
+// attractions.forEach(attraction => {
+
+// L.marker(attraction.coords)
+
+// .bindPopup(attraction.name)
+
+// .addTo(map);
+
+// });
+
+
+
+// Add route line
+
+const routeCoords = [
+
+destinations[0].coords,
+
+destinations[1].coords,
+
+destinations[2].coords
+
+];
+
+
+
+const route = L.polyline(routeCoords, {
+
+color: '#1a5f7a',
+
+weight: 3
+
+}).addTo(map);
+
+
+
+// 创建样式
+
+const transportStyle = document.createElement('style');
+
+transportStyle.textContent = `
+
+.ship-icon, .plane-icon {
+
+font-size: 24px;
+
+color: #00a8ff;
+
+text-shadow: 0 0 5px rgba(0,0,0,0.7);
+
+z-index: 1000 !important;
+
+text-align: center;
+
+width: 30px !important;
+
+height: 30px !important;
+
+display: flex !important;
+
+align-items: center;
+
+justify-content: center;
+
+}
+
+.leaflet-marker-icon.ship-icon,
+
+.leaflet-marker-icon.plane-icon {
+
+display: block !important;
+
+}
+
+.plane-icon i {
+
+transform: rotate(180deg);
+
+}
+
+`;
+
+document.head.appendChild(transportStyle);
+
+
+
+// 创建船的自定义图标
+
+const shipIcon = L.divIcon({
+
+className: 'ship-icon',
+
+html: '<i class="fas fa-ship"></i>',
+
+iconSize: [30, 30],
+
+iconAnchor: [15, 15]
+
+});
+
+
+
+// 创建飞机的自定义图标
+
+const planeIcon = L.divIcon({
+
+className: 'plane-icon',
+
+html: '<i class="fas fa-plane"></i>',
+
+iconSize: [30, 30],
+
+iconAnchor: [15, 15]
+
+});
+
+
+
+// 简单的船和飞机动画控制器
+
+class SimpleTransport {
+
+constructor(map) {
+
+this.map = map;
+
+this.animating = false;
+
+this.currentSegment = 0; // 0: 雅典到圣托里尼, 1: 圣托里尼到罗德岛
+
+this.progress = 0; // 0到1之间的进度
+
+
+
+// 创建船和飞机标记，初始都不添加到地图
+
+this.ship = L.marker(destinations[0].coords, {
+
+icon: shipIcon,
+
+zIndexOffset: 1000
+
+});
+
+
+
+this.plane = L.marker(destinations[1].coords, {
+
+icon: planeIcon,
+
+zIndexOffset: 1000
+
+});
+
+
+
+// 路线段定义
+
+this.segments = [
+
+{
+
+start: destinations[0].coords, // 雅典
+
+end: destinations[1].coords, // 圣托里尼
+
+vehicle: this.ship,
+
+speed: 0.0015 // 船的速度减慢50%（从0.003减为0.0015）
+
+},
+
+{
+
+start: destinations[1].coords, // 圣托里尼
+
+end: destinations[2].coords, // 罗德岛
+
+vehicle: this.plane,
+
+speed: 0.006 // 飞机速度保持不变
+
+}
+
+];
+
+
+
+// 初始显示船
+
+this.segments[0].vehicle.addTo(map);
+
+}
+
+
+
+// 线性插值计算位置
+
+interpolate(start, end, progress) {
+
+return [
+
+start[0] + (end[0] - start[0]) * progress,
+
+start[1] + (end[1] - start[1]) * progress
+
+];
+
+}
+
+
+
+// 计算方向角度
+
+calculateAngle(start, end) {
+
+const dx = end[1] - start[1];
+
+const dy = end[0] - start[0];
+
+// 计算角度（弧度）并转换为度数
+
+let angle = Math.atan2(dy, dx) * 180 / Math.PI;
+
+return angle;
+
+}
+
+
+
+// 更新动画
+
+update() {
+
+if (!this.animating) return;
+
+
+
+const segment = this.segments[this.currentSegment];
+
+
+
+// 更新进度
+
+this.progress += segment.speed;
+
+
+
+// 如果到达终点
+
+if (this.progress >= 1) {
+
+// 切换到下一段
+
+this.currentSegment = (this.currentSegment + 1) % this.segments.length;
+
+this.progress = 0;
+
+
+
+// 移除当前交通工具
+
+this.map.removeLayer(segment.vehicle);
+
+
+
+// 添加下一段的交通工具
+
+const nextSegment = this.segments[this.currentSegment];
+
+nextSegment.vehicle.setLatLng(nextSegment.start);
+
+nextSegment.vehicle.addTo(this.map);
+
+
+
+console.log("切换到:", this.currentSegment === 0 ? "船" : "飞机");
+
+} else {
+
+// 计算当前位置
+
+const currentPos = this.interpolate(segment.start, segment.end, this.progress);
+
+
+
+// 更新位置
+
+segment.vehicle.setLatLng(currentPos);
+
+
+
+// 更新方向
+
+const angle = this.calculateAngle(segment.start, segment.end);
+
+const icon = segment.vehicle.getElement();
+
+if (icon && icon.querySelector('i')) {
+
+if (this.currentSegment === 1) { // 飞机
+
+icon.querySelector('i').style.transform = `rotate(${angle}deg)`;
+
+} else { // 船
+
+icon.querySelector('i').style.transform = `rotate(${angle}deg)`;
+
+}
+
+}
+
+}
+
+
+
+// 继续动画
+
+requestAnimationFrame(() => this.update());
+
+}
+
+
+
+// 开始动画
+
+start() {
+
+if (this.animating) return;
+
+this.animating = true;
+
+requestAnimationFrame(() => this.update());
+
+}
+
+
+
+// 停止动画
+
+stop() {
+
+this.animating = false;
+
+}
+
+
+
+// 切换动画状态
+
+toggle() {
+
+if (this.animating) {
+
+this.stop();
+
+} else {
+
+this.start();
+
+}
+
+return this.animating;
+
+}
+
+}
+
+
+
+// 创建控制按钮
+
+class SimpleTransportControl extends L.Control {
+
+constructor(transport, options) {
+
+super(options);
+
+this.transport = transport;
+
+}
+
+
+
+onAdd(map) {
+
+const container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+
+this.button = L.DomUtil.create('a', '', container);
+
+this.button.innerHTML = '<i class="fas fa-play"></i>';
+
+this.button.title = '开始/停止交通工具动画';
+
+this.button.setAttribute('role', 'button');
+
+
+
+L.DomEvent.on(this.button, 'click', this._onClick, this);
+
+L.DomEvent.disableClickPropagation(container);
+
+
+
+return container;
+
+}
+
+
+
+_onClick() {
+
+const isAnimating = this.transport.toggle();
+
+this.button.innerHTML = isAnimating ?
+
+'<i class="fas fa-pause"></i>' :
+
+'<i class="fas fa-play"></i>';
+
+}
+
+}
+
+
+
+// 初始化交通工具和控制器
+
+const transport = new SimpleTransport(map);
+
+const transportControl = new SimpleTransportControl(transport, { position: 'topleft' });
+
+map.addControl(transportControl);
+
+
+
+// 延迟1秒后自动开始动画
+
+setTimeout(() => {
+
+transport.start();
+
+if (transportControl.button) {
+
+transportControl.button.innerHTML = '<i class="fas fa-pause"></i>';
+
+}
+
+}, 1000);
+
+
+
+// Location map modal functionality
+
+let locationMap = null;
+
+const locationMapModal = new bootstrap.Modal(document.getElementById('locationMapModal'));
+
+
+
+function showLocationMap(name, lat, lng) {
+
+// Remove existing map if it exists
+
+if (locationMap) {
+
+locationMap.remove();
+
+}
+
+
+
+// Show modal first
+
+locationMapModal.show();
+
+
+
+// Initialize map after modal is shown
+
+setTimeout(() => {
+
+const mapContainer = document.getElementById('locationMap');
+
+if (mapContainer) {
+
+locationMap = L.map('locationMap').setView([lat, lng], 15);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+attribution: '© OpenStreetMap contributors'
+
+}).addTo(locationMap);
+
+L.marker([lat, lng]).bindPopup(name).addTo(locationMap);
+
+locationMap.invalidateSize();
+
+}
+
+}, 300);
+
+}
+
+
+
+// Handle modal close
+
+document.getElementById('locationMapModal').addEventListener('hidden.bs.modal', function () {
+
+if (locationMap) {
+
+locationMap.remove();
+
+locationMap = null;
+
+}
+
+});
+
+
+
+// Handle window resize
+
+window.addEventListener('resize', function() {
+
+if (locationMap) {
+
+locationMap.invalidateSize();
+
+}
+
+});
+
+
+
+// 初始化 Bootstrap 模态框
+
+const editModal = new bootstrap.Modal(document.getElementById('editModal'));
+
+const uploadModal = new bootstrap.Modal(document.getElementById('uploadModal'));
+
+
+
+// 显示编辑模态框
+
+function showEditModal(section) {
+
+const titleInput = document.getElementById('editTitle');
+
+const contentInput = document.getElementById('editContent');
+
+
+
+// 根据section设置对应的内容
+
+switch(section) {
+
+case 'home':
+
+titleInput.value = document.querySelector('.hero-section h1').textContent;
+
+contentInput.value = document.querySelector('.hero-section .lead').textContent;
+
+break;
+
+case 'athens':
+
+titleInput.value = document.querySelector('.location-card:nth-child(1) h3').textContent;
+
+const athensItems = Array.from(document.querySelectorAll('.location-card:nth-child(1) .list-unstyled li'))
+
+.map(li => {
+
+const title = li.querySelector('strong').textContent;
+
+const desc = li.querySelector('p').textContent;
+
+return `${title}\n${desc}`;
+
+})
+
+.join('\n\n');
+
+contentInput.value = athensItems;
+
+break;
+
+case 'santorini':
+
+titleInput.value = document.querySelector('.location-card:nth-child(2) h3').textContent;
+
+const santoriniItems = Array.from(document.querySelectorAll('.location-card:nth-child(2) .list-unstyled li'))
+
+.map(li => {
+
+const title = li.querySelector('strong').textContent;
+
+const desc = li.querySelector('p').textContent;
+
+return `${title}\n${desc}`;
+
+})
+
+.join('\n\n');
+
+contentInput.value = santoriniItems;
+
+break;
+
+case 'rhodes':
+
+titleInput.value = document.querySelector('.location-card:nth-child(3) h3').textContent;
+
+const rhodesItems = Array.from(document.querySelectorAll('.location-card:nth-child(3) .list-unstyled li'))
+
+.map(li => {
+
+const title = li.querySelector('strong').textContent;
+
+const desc = li.querySelector('p').textContent;
+
+return `${title}\n${desc}`;
+
+})
+
+.join('\n\n');
+
+contentInput.value = rhodesItems;
+
+break;
+
+}
+
+
+
+// 存储当前编辑的section
+
+document.getElementById('editModal').dataset.section = section;
+
+editModal.show();
+
+}
+
+
+
+// 保存编辑内容
+
+function saveEdit() {
+
+const titleInput = document.getElementById('editTitle');
+
+const contentInput = document.getElementById('editContent');
+
+const section = document.getElementById('editModal').dataset.section;
+
+
+
+// 根据section更新对应的内容
+
+switch(section) {
+
+case 'home':
+
+document.querySelector('.hero-section h1').textContent = titleInput.value;
+
+document.querySelector('.hero-section .lead').textContent = contentInput.value;
+
+break;
+
+case 'athens':
+
+document.querySelector('.location-card:nth-child(1) h3').textContent = titleInput.value;
+
+const athensList = document.querySelector('.location-card:nth-child(1) .list-unstyled');
+
+athensList.innerHTML = contentInput.value.split('\n\n').map(item => {
+
+const [title, desc] = item.split('\n');
+
+return `
+
+<li class="mb-3">
+
+<strong>${title}</strong>
+
+<p class="mb-2">${desc}</p>
+
+<button class="map-button" onclick="showLocationMap('${title}', 37.9715, 23.7267)">
+
+<i class="fas fa-map-marker-alt"></i> 在地图上查看
+
+</button>
+
+</li>
+
+`;
+
+}).join('');
+
+break;
+
+case 'santorini':
+
+document.querySelector('.location-card:nth-child(2) h3').textContent = titleInput.value;
+
+const santoriniList = document.querySelector('.location-card:nth-child(2) .list-unstyled');
+
+santoriniList.innerHTML = contentInput.value.split('\n\n').map(item => {
+
+const [title, desc] = item.split('\n');
+
+return `
+
+<li class="mb-3">
+
+<strong>${title}</strong>
+
+<p class="mb-2">${desc}</p>
+
+<button class="map-button" onclick="showLocationMap('${title}', 36.4610, 25.3767)">
+
+<i class="fas fa-map-marker-alt"></i> 在地图上查看
+
+</button>
+
+</li>
+
+`;
+
+}).join('');
+
+break;
+
+case 'rhodes':
+
+document.querySelector('.location-card:nth-child(3) h3').textContent = titleInput.value;
+
+const rhodesList = document.querySelector('.location-card:nth-child(3) .list-unstyled');
+
+rhodesList.innerHTML = contentInput.value.split('\n\n').map(item => {
+
+const [title, desc] = item.split('\n');
+
+return `
+
+<li class="mb-3">
+
+<strong>${title}</strong>
+
+<p class="mb-2">${desc}</p>
+
+<button class="map-button" onclick="showLocationMap('${title}', 36.4467, 28.2278)">
+
+<i class="fas fa-map-marker-alt"></i> 在地图上查看
+
+</button>
+
+</li>
+
+`;
+
+}).join('');
+
+break;
+
+}
+
+
+
+editModal.hide();
+
+}
+
+
+
+// 预览上传的图片
+
+function previewImage(input) {
+
+const preview = document.getElementById('imagePreview');
+
+if (input.files && input.files[0]) {
+
+const reader = new FileReader();
+
+reader.onload = function(e) {
+
+preview.src = e.target.result;
+
+preview.style.display = 'block';
+
+}
+
+reader.readAsDataURL(input.files[0]);
+
+}
+
+}
+
+
+
+// 保存上传的图片
+
+function saveImage() {
+
+const fileInput = document.getElementById('imageUpload');
+
+const locationSelect = document.getElementById('imageLocation');
+
+const file = fileInput.files[0];
+
+
+
+if (file) {
+
+const reader = new FileReader();
+
+reader.onload = function(e) {
+
+const imageUrl = e.target.result;
+
+updateImage(locationSelect.value, imageUrl);
+
+}
+
+reader.readAsDataURL(file);
+
+}
+
+uploadModal.hide();
+
+}
+
+
+
+// 更新图片
+
+function updateImage(location, imageUrl) {
+
+switch(location) {
+
+case 'athens':
+
+document.querySelector('.location-card:nth-child(1) .location-image').src = imageUrl;
+
+break;
+
+case 'santorini':
+
+document.querySelector('.location-card:nth-child(2) .location-image').src = imageUrl;
+
+break;
+
+case 'rhodes':
+
+document.querySelector('.location-card:nth-child(3) .location-image').src = imageUrl;
+
+break;
+
+}
+
+}
+
+</script>
+
+
+
+</body>
+
+
+
+</html>
+
+
